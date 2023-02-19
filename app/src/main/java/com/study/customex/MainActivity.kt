@@ -13,11 +13,15 @@ import com.study.customex.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
+    private lateinit var alertDialogManager: AlertDialogManager
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
         binding.mainActivity = this
+
+        alertDialogManager = AlertDialogManager(this)
     }
 
     //Ex1
@@ -69,15 +73,11 @@ class MainActivity : AppCompatActivity() {
 
     //Ex4
     fun onEx3() {
-        AlertDialog.Builder(this)
-            .setTitle("타이틀")
-            .setMessage("알림 내용")
-            .setPositiveButton("Y") { _, int ->
-                Toast.makeText(this, "INT : $int", Toast.LENGTH_SHORT).show()
-            }
-            .setNegativeButton("N") { dialogInterface, _ ->
-                dialogInterface.dismiss()
-            }
-            .show()
+        alertDialogManager.showPlainAlertDialog(
+            title = "title",
+            message = "message",
+            positiveButtonText = "Y",
+            negativeButtonText = "N"
+        )
     }
 }
