@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <style name="CustomAlertDialog">
         <!-- 꽉 채운 화면에 배경 없이 (custom view 영역만 보일 것이다.) -->
         <item name="android:windowBackground">@android:color/transparent</item>
@@ -13,5 +13,13 @@
 
         <!-- Dialog 가 센터에 나오도록 하자. -->
         <item name="android:windowIsFloating">true</item>
+    </style>
+
+    <style name="Theme_Dialog" parent="android:Theme.Holo.Light.Dialog.NoActionBar">
+        <item name="android:forceDarkAllowed" tools:targetApi="q">false</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowMinWidthMajor">90%</item>
+        <item name="android:windowMinWidthMinor">90%</item>
+        <item name="android:background">@drawable/layout_membership_dialog</item>
     </style>
 </resources>
