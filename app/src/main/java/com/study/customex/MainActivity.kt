@@ -52,6 +52,22 @@ class MainActivity : AppCompatActivity() {
 
     //Ex4
     fun onEx2() {
+        val act = this ?: return
+
+//        MyCustomDialogWithYN(act, "이 문의 내용을\n수정 하시겠습니까?",
+//            "수정하기",
+//            "취소",
+//            resources.getColor(R.color.purple_200),
+//            resources.getColor(R.color.teal_200), act,
+//            {
+//                testFun()
+//            },
+//            {}).showDialog()
+
+        MyCustomDialog(this, "인증시간이 초과되었습니다. 인증 요청을 다시 진행해주시기 바랍니다.", "확인", {}).showDialog()
+
+
+
 //        val view = LayoutInflater.from(this).inflate(R.layout.custom_sample_dialog_02, null)
 //        view.findViewById<TextView>(R.id.text_view_ex_01_title).text = "Ex3 AlertDialog"
 //        val alertDialog = AlertDialog.Builder(this, R.style.Them_Dialog_Ex_01)
@@ -94,5 +110,31 @@ class MainActivity : AppCompatActivity() {
         Toast.makeText(this, "TOAST Button", Toast.LENGTH_SHORT).show()
         startActivity(intent)
     }
+
+
+
+//        Dialog(this).apply {
+//            setContentView(R.layout.dialog_ex_01)
+//            this.findViewById<TextView>(R.id.text_view_ex_01_title).text = "Ex1 AlertDialog"
+//            this.findViewById<TextView>(R.id.contentTextView).text = "Alert Contents"
+//
+//            this.findViewById<AppCompatButton>(R.id.btnNegative).apply {
+//                text = "N"
+//                setOnClickListener {
+//                    dismiss()
+//                }
+//            }
+//
+//            this.findViewById<AppCompatButton>(R.id.btnPositive).apply {
+//                text = "Y"
+//                setOnClickListener {
+//                    Toast.makeText(context, "positive button", Toast.LENGTH_SHORT).show()
+//                }
+//            }
+//            show()
+//        }
+
+
+
 
 }
