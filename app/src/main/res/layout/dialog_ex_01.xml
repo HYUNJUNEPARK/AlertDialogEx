@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:android="http://schemas.android.com/apk/res/android">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -8,39 +9,39 @@
         android:orientation="vertical">
 
         <TextView
-            android:id="@+id/titleTextView"
+            android:id="@+id/text_view_ex_01_title"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:padding="10dp"
-            android:background="#70D9D5E1" />
+            tools:text = "Dialog Title"
+            tools:background="#70D9D5E1"/>
 
         <TextView
-            android:id="@+id/contentTextView"
+            android:id="@+id/text_view_ex_01_content"
+            tools:text = "Dialog Content"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:padding="20dp" />
+            android:layout_height="wrap_content"/>
 
         <LinearLayout
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
 
             <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/btnPositive"
-                android:layout_width="0dp"
+                android:id="@+id/button_ex_01_negative"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                tools:text = "NO"
                 android:layout_weight="1"
-                android:padding="10dp"
                 android:textAllCaps="false"
                 android:textSize="12sp" />
 
             <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/btnNegative"
-                android:layout_width="0dp"
+                android:id="@+id/button_ex_01_positive"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:padding="10dp"
+                tools:text = "YES"
                 android:textAllCaps="false"
                 android:textSize="12sp" />
         </LinearLayout>

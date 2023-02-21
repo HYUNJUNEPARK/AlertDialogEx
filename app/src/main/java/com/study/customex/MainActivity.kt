@@ -1,14 +1,10 @@
 package com.study.customex
 
-import android.app.Dialog
-import androidx.appcompat.app.AppCompatActivity
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
-import android.view.LayoutInflater
-import android.widget.TextView
 import android.widget.Toast
-import androidx.appcompat.app.AlertDialog
-import androidx.appcompat.widget.AppCompatButton
+import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import com.study.customex.databinding.ActivityMainBinding
 
@@ -19,15 +15,22 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
         binding.mainActivity = this
-
-
     }
 
     //Ex1
     fun onEx1() {
+        AlertDialogManager(this).showXmlLayoutDialog(
+            "Title",
+            "Message",
+            "YES",
+            "NO",
+            ::testFun,
+            ::testFun2
+        )
+
 //        Dialog(this).apply {
-//            setContentView(R.layout.custom_sample_dialog_01)
-//            this.findViewById<TextView>(R.id.titleTextView).text = "Ex1 AlertDialog"
+//            setContentView(R.layout.dialog_ex_01)
+//            this.findViewById<TextView>(R.id.text_view_ex_01_title).text = "Ex1 AlertDialog"
 //            this.findViewById<TextView>(R.id.contentTextView).text = "Alert Contents"
 //
 //            this.findViewById<AppCompatButton>(R.id.btnNegative).apply {
@@ -50,8 +53,8 @@ class MainActivity : AppCompatActivity() {
     //Ex4
     fun onEx2() {
 //        val view = LayoutInflater.from(this).inflate(R.layout.custom_sample_dialog_02, null)
-//        view.findViewById<TextView>(R.id.titleTextView).text = "Ex3 AlertDialog"
-//        val alertDialog = AlertDialog.Builder(this, R.style.CustomAlertDialog)
+//        view.findViewById<TextView>(R.id.text_view_ex_01_title).text = "Ex3 AlertDialog"
+//        val alertDialog = AlertDialog.Builder(this, R.style.Them_Dialog_Ex_01)
 //            .setView(view)
 //            .setCancelable(false)
 //            .create()
@@ -68,31 +71,28 @@ class MainActivity : AppCompatActivity() {
 //            }
 //        }
 //        alertDialog.show()
-        AlertDialogManager(this, ::testFun).showPlainAlertDialog(
-            "aaa",
-            "aaaadf",
-            "asdsf",
-            "asdfdsfasfs"
-        )
-
     }
 
-    //Ex4
     fun onEx3() {
-//        alertDialogManager.showPlainAlertDialog(
-//            title = "title",
-//            message = "message",
-//            positiveButtonText = "Y",
-//            negativeButtonText = "N"
-//        )
-        Log.d("testLog", "testFun: ==========")
-        AlertDialogManager(this, ::testFun).showDialog()
-
-
-        //alertDialogManager.showDialog()
+        AlertDialogManager(this).showPlainAlertDialog(
+            "Title",
+            "Message",
+            "YES",
+            "NO",
+            ::testFun
+        )
     }
 
-    fun testFun() {
-        Log.d("testLog", "testFun: 123123")
+    private fun testFun() {
+        Log.d("testLog", "showXmlLayoutDialog: 22")
+        Toast.makeText(this, "TOAST Button", Toast.LENGTH_SHORT).show()
+        val intent = Intent(applicationContext, SubActivity::class.java)
+        startActivity(intent)
     }
+
+    private fun testFun2() {
+        Toast.makeText(this, "TOAST Button", Toast.LENGTH_SHORT).show()
+        startActivity(intent)
+    }
+
 }

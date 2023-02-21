@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools">
-    <style name="CustomAlertDialog">
+    <style name="Them_Dialog_Ex_01">
         <!-- 꽉 채운 화면에 배경 없이 (custom view 영역만 보일 것이다.) -->
         <item name="android:windowBackground">@android:color/transparent</item>
         <item name="android:windowMinWidthMajor">100%</item>
