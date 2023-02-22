@@ -64,7 +64,11 @@ class MainActivity : AppCompatActivity() {
 //            },
 //            {}).showDialog()
 
-        MyCustomDialog(this, "인증시간이 초과되었습니다. 인증 요청을 다시 진행해주시기 바랍니다.", "확인", {}).showDialog()
+        MyCustomDialog(
+            this,
+            "인증시간이 초과되었습니다. 인증 요청을 다시 진행해주시기 바랍니다.",
+            "확인"
+        ) {/*확인 버튼 클릭 시 실행*/}.showDialog()
 
 
 
