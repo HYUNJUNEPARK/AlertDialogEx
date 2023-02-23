@@ -9,6 +9,7 @@ import android.view.View
 import android.widget.Button
 import android.widget.LinearLayout
 import android.widget.TextView
+import androidx.appcompat.widget.AppCompatButton
 import com.google.android.material.button.MaterialButton
 
 /**
@@ -70,37 +71,19 @@ class MyCustomDialog(
 
     private fun buildEx2View(context: Context): View {
         val inflater = LayoutInflater.from(context)
-        val view = inflater.inflate(R.layout.membership_custom_withyn_popup, null)
-        (view.findViewById(R.id.btn_no_custompopup_withyn) as TextView).text = positiveBtnContent
-        (view.findViewById(R.id.btn_yes_custompopup_withyn) as TextView).text = negativeBtnContent
+        val view = inflater.inflate(R.layout.dialog_ex_02, null)
+        (view.findViewById(R.id.ex_02_positive_btn) as TextView).text = positiveBtnContent
+        (view.findViewById(R.id.ex_02_negative_btn) as TextView).text = negativeBtnContent
 
-        //(view.findViewById(R.id.btn_no_custompopup_withyn) as TextView).setTextColor(colorNbtnText)
-        //(view.findViewById(R.id.btn_yes_custompopup_withyn) as TextView).setTextColor(colorYbtnText)
-        //<editor-fold desc="for temp. for 1차 스프린트.">
-
-//        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-//            if (ybtnText == "탈퇴하기") {
-//                (view.findViewById(R.id.btn_yes_custompopup_withyn) as TextView).setTypeface(
-//                    activity.resources.getFont(R.font.pretendard_bold))
-//            }
-//            if (ybtnText == "본인 인증") {
-//                (view.findViewById(R.id.txt_content_custompopup_withyn) as TextView).text =
-//                    Html.fromHtml(activity.resources.getString(R.string.app_name))
-//                (view.findViewById(R.id.btn_yes_custompopup_withyn) as TextView).setTypeface(
-//                    activity.resources.getFont(R.font.pretendard_bold))
-//            } else {
-//                (view.findViewById(R.id.txt_content_custompopup_withyn) as TextView).text = content
-//            }
-//        }
-
-        (view.findViewById(R.id.btn_no_custompopup_withyn) as MaterialButton).setOnClickListener {
+        (view.findViewById(R.id.ex_02_positive_btn) as MaterialButton).setOnClickListener {
             dialog.dismiss()
+            positiveFun?.invoke()
             //parameterNFunction()
         }
-        //</editor-fold>
 
-        (view.findViewById(R.id.btn_yes_custompopup_withyn) as MaterialButton).setOnClickListener {
+        (view.findViewById(R.id.ex_02_negative_btn) as MaterialButton).setOnClickListener {
             dialog.dismiss()
+            negativeFun?.invoke()
             //negativeFun()
         }
         return view

@@ -29,11 +29,13 @@ class MainActivity : AppCompatActivity() {
 
     //Ex2
     fun onEx2() {
-//        MyCustomDialog(
-//            this,
-//            "teststest",
-//            "확인"
-//        ) {/*확인 버튼 클릭 시 실행*/}.showEx2Dialog()
+        MyCustomDialog(
+            this,
+            "teststest",
+            "확인",
+            positiveFun = ::testFun,
+            negativeFun = ::testFun
+        ).showEx2Dialog()
     }
 
     //Ex3
@@ -58,31 +60,4 @@ class MainActivity : AppCompatActivity() {
         Toast.makeText(this, "TOAST Button", Toast.LENGTH_SHORT).show()
         startActivity(intent)
     }
-
-
-
-//        Dialog(this).apply {
-//            setContentView(R.layout.dialog_ex_01)
-//            this.findViewById<TextView>(R.id.text_view_ex_01_title).text = "Ex1 AlertDialog"
-//            this.findViewById<TextView>(R.id.contentTextView).text = "Alert Contents"
-//
-//            this.findViewById<AppCompatButton>(R.id.btnNegative).apply {
-//                text = "N"
-//                setOnClickListener {
-//                    dismiss()
-//                }
-//            }
-//
-//            this.findViewById<AppCompatButton>(R.id.btnPositive).apply {
-//                text = "Y"
-//                setOnClickListener {
-//                    Toast.makeText(context, "positive button", Toast.LENGTH_SHORT).show()
-//                }
-//            }
-//            show()
-//        }
-
-
-
-
 }
