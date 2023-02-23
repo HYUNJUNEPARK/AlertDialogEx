@@ -23,4 +23,12 @@
         <item name="android:background">@drawable/layout_membership_dialog</item>
     </style>
 
+    <style name="Theme_Dialog_Rectangular" parent="android:Theme.Holo.Light.Dialog.NoActionBar">
+        <item name="android:forceDarkAllowed" tools:targetApi="q">false</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowMinWidthMajor">90%</item>
+        <item name="android:windowMinWidthMinor">90%</item>
+        <item name="android:background">@drawable/dialog_background_layout_rectangular</item>
+    </style>
+
 </resources>

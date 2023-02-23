@@ -20,7 +20,6 @@ class MainActivity : AppCompatActivity() {
     //Ex1
     fun onEx1() {
         MyCustomDialog(this).showEx1Dialog(
-            "teststest !",
             "확인 !",
             positiveFun = ::testFun
         )
@@ -38,7 +37,7 @@ class MainActivity : AppCompatActivity() {
 
     //Ex3
     fun onEx3() {
-        MyCustomDialog(this).showEx3Dialog(
+        MyCustomDialog(this).showEx5Dialog(
             "Title",
             "Message",
             "YES",

@@ -15,23 +15,21 @@ import com.google.android.material.button.MaterialButton
  * @param context
  */
 class MyCustomDialog(private val context: Context) {
-    private val dialog: Dialog = Dialog(context, R.style.Theme_Dialog)
+    private val dialog: Dialog = Dialog(context, R.style.Theme_Dialog_Rectangular)
     private var layoutParams: LinearLayout.LayoutParams = LinearLayout.LayoutParams(
         /*width*/ LinearLayout.LayoutParams.MATCH_PARENT,
         /*height*/LinearLayout.LayoutParams.MATCH_PARENT
     )
 
     /**
-     *
+     * 원버튼 광고성 다이얼로그(이미지)
      */
     fun showEx1Dialog(
-        content: String,
         positiveBtnContent: String,
         positiveFun: (() -> Unit)? = null
     ) {
         //build view
         val view =  LayoutInflater.from(context).inflate(R.layout.dialog_ex_01, null)
-        (view.findViewById(R.id.txt_content) as TextView).text = content
         (view.findViewById(R.id.btn_confirm) as Button).text = positiveBtnContent
         (view.findViewById(R.id.btn_confirm) as Button).setOnClickListener {
             dialog.dismiss()
@@ -47,7 +45,7 @@ class MyCustomDialog(private val context: Context) {
     }
 
     /**
-     *
+     * 투버튼 광고성 다이얼로그(이미지)
      */
     fun showEx2Dialog(
         positiveBtnContent: String,
@@ -77,9 +75,23 @@ class MyCustomDialog(private val context: Context) {
     }
 
     /**
-     *
+     * 원버튼 시스템 다이얼로그(텍스트)
      */
-    fun showEx3Dialog(
+    fun showEx3Dialog(){
+
+    }
+
+    /**
+     * 투버튼 시스템 다이얼로그(텍스트)
+     */
+    fun showEx4Dialog(){
+
+    }
+
+    /**
+     * 플랫폼 다이얼로그(텍스트)
+     */
+    fun showEx5Dialog(
         title: String,
         content: String,
         positiveBtnContent: String,
