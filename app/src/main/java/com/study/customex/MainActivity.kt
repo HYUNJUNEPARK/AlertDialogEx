@@ -19,28 +19,26 @@ class MainActivity : AppCompatActivity() {
 
     //Ex1
     fun onEx1() {
-        MyCustomDialog(
-            this,
+        MyCustomDialog(this).showEx1Dialog(
             "teststest !",
             "확인 !",
             positiveFun = ::testFun
-        ).showEx1Dialog()
+        )
     }
 
     //Ex2
     fun onEx2() {
-        MyCustomDialog(
-            this,
+        MyCustomDialog(this).showEx2Dialog(
             "teststest",
             "확인",
             positiveFun = ::testFun,
             negativeFun = ::testFun
-        ).showEx2Dialog()
+        )
     }
 
     //Ex3
     fun onEx3() {
-        AlertDialogManager(this).showPlainAlertDialog(
+        MyCustomDialog(this).showEx3Dialog(
             "Title",
             "Message",
             "YES",
