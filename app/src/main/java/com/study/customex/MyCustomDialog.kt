@@ -15,7 +15,7 @@ import com.google.android.material.button.MaterialButton
  * @param context
  */
 class MyCustomDialog(private val context: Context) {
-    private val dialog: Dialog = Dialog(context, R.style.Theme_Dialog_Rectangular)
+    private val dialog: Dialog = Dialog(context, R.style.Them_Dialog_Ex_01)
     private var layoutParams: LinearLayout.LayoutParams = LinearLayout.LayoutParams(
         /*width*/ LinearLayout.LayoutParams.MATCH_PARENT,
         /*height*/LinearLayout.LayoutParams.MATCH_PARENT
@@ -24,16 +24,21 @@ class MyCustomDialog(private val context: Context) {
     /**
      * 원버튼 광고성 다이얼로그(이미지)
      */
-    fun showEx1Dialog(
+    fun showAdOneBtnDialog(
         positiveBtnContent: String,
         positiveFun: (() -> Unit)? = null
     ) {
         //build view
         val view =  LayoutInflater.from(context).inflate(R.layout.dialog_ex_01, null)
+
+
         (view.findViewById(R.id.btn_confirm) as Button).text = positiveBtnContent
-        (view.findViewById(R.id.btn_confirm) as Button).setOnClickListener {
+        (view.findViewById(R.id.btn_close) as Button).setOnClickListener { //닫기 버튼
             dialog.dismiss()
+        }
+        (view.findViewById(R.id.btn_confirm) as Button).setOnClickListener { //확인 버튼
             positiveFun?.invoke()
+            dialog.dismiss()
         }
 
         //set

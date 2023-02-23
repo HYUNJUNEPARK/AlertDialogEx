@@ -19,9 +19,9 @@ class MainActivity : AppCompatActivity() {
 
     //Ex1
     fun onEx1() {
-        MyCustomDialog(this).showEx1Dialog(
-            "확인 !",
-            positiveFun = ::testFun
+        MyCustomDialog(this).showAdOneBtnDialog(
+            positiveBtnContent =  "확인 >",
+            ::testFun
         )
     }
 
@@ -47,8 +47,6 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun testFun() {
-        Log.d("testLog", "showXmlLayoutDialog: 22")
-        Toast.makeText(this, "TOAST Button", Toast.LENGTH_SHORT).show()
         val intent = Intent(applicationContext, SubActivity::class.java)
         startActivity(intent)
     }
