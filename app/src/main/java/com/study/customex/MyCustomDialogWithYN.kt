@@ -43,7 +43,6 @@ class MyCustomDialogWithYN(
             LinearLayout.LayoutParams.MATCH_PARENT)
         view = buildView(context)
         dialog.setContentView(view, lp)
-        //set transparent to see the rounded corners
         dialog.window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
     }
 

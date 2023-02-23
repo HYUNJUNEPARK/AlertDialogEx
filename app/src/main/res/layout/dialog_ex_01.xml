@@ -1,50 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools">
-    <LinearLayout
-        android:layout_width="wrap_content"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_marginStart="16dp"
+    android:layout_marginEnd="16dp">
+
+    <TextView
+        android:id="@+id/txt_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="40dp"
         android:gravity="center"
-        android:orientation="vertical">
+        android:textSize="18sp"
+        tools:text="txtContent" />
 
-        <TextView
-            android:id="@+id/text_view_ex_01_title"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            tools:text = "Dialog Title"
-            tools:background="#70D9D5E1"/>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="40dp"
+        android:background="@color/black" />
 
-        <TextView
-            android:id="@+id/text_view_ex_01_content"
-            tools:text = "Dialog Content"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
+    <Button
+        android:id="@+id/btn_confirm"
+        android:layout_width="match_parent"
+        android:layout_height="53dp"
+        android:textAllCaps="false"
+        android:background="?android:selectableItemBackground"
+        android:textColor="@color/black"
+        tools:text="btnConfirm" />
 
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
-            <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/button_ex_01_negative"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                tools:text = "NO"
-                android:layout_weight="1"
-                android:textAllCaps="false"
-                android:textSize="12sp" />
-
-            <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/button_ex_01_positive"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                tools:text = "YES"
-                android:textAllCaps="false"
-                android:textSize="12sp" />
-        </LinearLayout>
-
-    </LinearLayout>
-</layout>
+</LinearLayout>

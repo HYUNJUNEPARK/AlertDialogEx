@@ -5,7 +5,6 @@ import android.content.Context
 import android.util.Log
 import android.view.LayoutInflater
 import android.widget.TextView
-import android.widget.Toast
 import androidx.appcompat.widget.AppCompatButton
 
 class AlertDialogManager(private val context: Context) {
@@ -60,7 +59,7 @@ class AlertDialogManager(private val context: Context) {
         positiveFun: () -> Unit,
         negativeFun: (() -> Unit)? = null
     ) {
-        val view = LayoutInflater.from(context).inflate(R.layout.dialog_ex_01, null)
+        val view = LayoutInflater.from(context).inflate(R.layout.dialog_ex_00, null)
         view.findViewById<TextView>(R.id.text_view_ex_01_title).text = title
         view.findViewById<TextView>(R.id.text_view_ex_01_content).text = message
 
