@@ -14,13 +14,14 @@ import com.google.android.material.button.MaterialButton
 /**
  * @param context
  */
-class MyCustomDialog(private val context: Context) {
+class DialogManager(private val context: Context) {
     private val dialog: Dialog = Dialog(context, R.style.Them_Dialog_Ex_01)
     private var layoutParams: LinearLayout.LayoutParams = LinearLayout.LayoutParams(
         /*width*/ LinearLayout.LayoutParams.MATCH_PARENT,
         /*height*/LinearLayout.LayoutParams.MATCH_PARENT
     )
 
+    //TODO 서버에서 받은 이미지를 이미지 뷰에 띄울 수 있어야함
     /**
      * 원버튼 광고성 다이얼로그(이미지)
      */
@@ -30,8 +31,6 @@ class MyCustomDialog(private val context: Context) {
     ) {
         //build view
         val view =  LayoutInflater.from(context).inflate(R.layout.dialog_ex_01, null)
-
-
         (view.findViewById(R.id.btn_confirm) as Button).text = positiveBtnContent
         (view.findViewById(R.id.btn_close) as Button).setOnClickListener { //닫기 버튼
             dialog.dismiss()
@@ -49,10 +48,11 @@ class MyCustomDialog(private val context: Context) {
         dialog.show()
     }
 
+    //TODO 서버에서 받은 이미지를 이미지 뷰에 띄울 수 있어야함
     /**
      * 투버튼 광고성 다이얼로그(이미지)
      */
-    fun showEx2Dialog(
+    fun showAdTwoBtnDialog(
         positiveBtnContent: String,
         negativeBtnContent: String? = null,
         positiveFun: (() -> Unit)? = null,
@@ -94,7 +94,7 @@ class MyCustomDialog(private val context: Context) {
     }
 
     /**
-     * 플랫폼 다이얼로그(텍스트)
+     * 기본 다이얼로그(텍스트)
      */
     fun showEx5Dialog(
         title: String,

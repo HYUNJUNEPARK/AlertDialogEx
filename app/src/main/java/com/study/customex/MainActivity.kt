@@ -2,7 +2,6 @@ package com.study.customex
 
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
@@ -10,16 +9,18 @@ import com.study.customex.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
+    private lateinit var dialogManager: DialogManager
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
         binding.mainActivity = this
+        dialogManager = DialogManager(this)
     }
 
     //Ex1
     fun onEx1() {
-        MyCustomDialog(this).showAdOneBtnDialog(
+        dialogManager.showAdOneBtnDialog(
             positiveBtnContent =  "확인 >",
             ::testFun
         )
@@ -27,7 +28,7 @@ class MainActivity : AppCompatActivity() {
 
     //Ex2
     fun onEx2() {
-        MyCustomDialog(this).showEx2Dialog(
+        dialogManager.showAdTwoBtnDialog(
             "teststest",
             "확인",
             positiveFun = ::testFun,
@@ -37,7 +38,7 @@ class MainActivity : AppCompatActivity() {
 
     //Ex3
     fun onEx3() {
-        MyCustomDialog(this).showEx5Dialog(
+        dialogManager.showEx5Dialog(
             "Title",
             "Message",
             "YES",
