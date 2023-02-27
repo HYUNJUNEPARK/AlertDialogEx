@@ -22,7 +22,9 @@ class MainActivity : AppCompatActivity() {
     fun onEx1() {
         dialogManager.showAdOneBtnDialog(
             positiveBtnContent =  "확인 >",
-            ::testFun
+            positiveFun = ::testFun,
+            localImgResPNG = null,
+            remoteImgResUrl = "https://www.hanbit.co.kr/data/editor/20200519155220_aglmvinv.png"
         )
     }
 

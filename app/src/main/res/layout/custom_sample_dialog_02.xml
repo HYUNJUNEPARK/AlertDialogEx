@@ -12,12 +12,12 @@
         android:gravity="center"
         android:textColor="@color/white"
         android:textSize="14sp"
-        app:layout_constraintBottom_toTopOf="@id/coverImage"
-        app:layout_constraintEnd_toEndOf="@id/coverImage"
-        app:layout_constraintStart_toStartOf="@id/coverImage" />
+        app:layout_constraintBottom_toTopOf="@id/ad_one_button_dialog_iv"
+        app:layout_constraintEnd_toEndOf="@id/ad_one_button_dialog_iv"
+        app:layout_constraintStart_toStartOf="@id/ad_one_button_dialog_iv" />
 
     <ImageView
-        android:id="@+id/coverImage"
+        android:id="@+id/ad_one_button_dialog_iv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:src="@drawable/ic_sample_img"
@@ -32,9 +32,9 @@
         android:background="#0061E8"
         android:gravity="center"
         android:orientation="horizontal"
-        app:layout_constraintEnd_toEndOf="@id/coverImage"
-        app:layout_constraintStart_toStartOf="@id/coverImage"
-        app:layout_constraintTop_toBottomOf="@id/coverImage">
+        app:layout_constraintEnd_toEndOf="@id/ad_one_button_dialog_iv"
+        app:layout_constraintStart_toStartOf="@id/ad_one_button_dialog_iv"
+        app:layout_constraintTop_toBottomOf="@id/ad_one_button_dialog_iv">
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btnPositive2"

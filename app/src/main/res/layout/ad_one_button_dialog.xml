@@ -14,40 +14,40 @@
         android:orientation="vertical">
 
         <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/btn_close"
+            android:id="@+id/ad_one_button_dialog_btn_close"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="15dp"
             android:background="@drawable/ic_baseline_close_24"
             android:minWidth="0dp"
             android:minHeight="0dp"
-            app:layout_constraintStart_toEndOf="@id/coverImage"
+            app:layout_constraintStart_toEndOf="@id/ad_one_button_dialog_iv"
             app:layout_constraintTop_toTopOf="parent"
             tools:backgroundTint="@color/black" />
 
         <ImageView
-            android:id="@+id/coverImage"
+            android:id="@+id/ad_one_button_dialog_iv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:maxHeight="200dp"
             android:layout_marginTop="15dp"
-            android:scaleType="centerCrop"
-            android:src="@drawable/sample01"
+            android:scaleType="fitXY"
+            tools:src="@drawable/ic_sample_img"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/btn_close" />
+            app:layout_constraintTop_toBottomOf="@id/ad_one_button_dialog_btn_close" />
 
         <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/btn_confirm"
+            android:id="@+id/ad_one_button_dialog_btn_confirm"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:background="@drawable/button_patter"
             android:textAllCaps="false"
             android:textColor="@color/black"
             android:textSize="15dp"
-            app:layout_constraintEnd_toEndOf="@id/coverImage"
-            app:layout_constraintStart_toStartOf="@id/coverImage"
-            app:layout_constraintTop_toBottomOf="@id/coverImage"
+            app:layout_constraintEnd_toEndOf="@id/ad_one_button_dialog_iv"
+            app:layout_constraintStart_toStartOf="@id/ad_one_button_dialog_iv"
+            app:layout_constraintTop_toBottomOf="@id/ad_one_button_dialog_iv"
             tools:text="확인 >" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
