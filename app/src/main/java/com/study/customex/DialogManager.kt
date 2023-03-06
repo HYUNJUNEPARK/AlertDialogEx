@@ -1,5 +1,6 @@
 package com.study.customex
 
+import android.app.Activity
 import android.app.AlertDialog
 import android.app.Dialog
 import android.content.Context
@@ -145,6 +146,8 @@ class DialogManager(private val context: Context) {
             }
             .show()
     }
+
+
 
     private fun convertUrlToBitmap(url: String): Bitmap {
         val url = URL(url)
