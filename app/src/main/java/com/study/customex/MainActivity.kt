@@ -73,4 +73,9 @@ class MainActivity : AppCompatActivity() {
         Toast.makeText(this, "TOAST Button", Toast.LENGTH_SHORT).show()
         startActivity(intent)
     }
+
+
+    /**
+     * https://velog.io/@ejjjang0414/%EC%95%88%EB%93%9C%EB%A1%9C%EC%9D%B4%EB%93%9C-Fragment-manager
+     */
 }
